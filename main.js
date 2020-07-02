@@ -5,6 +5,7 @@ let app = new Vue({
     image: "./sock.jpg",
     inStock: true,
     details: ["80% cotton", "20% polyester", "Gender-neutral"],
+    brand: "Nike",
     variants: [
       {
         variantId: 2234,
@@ -25,6 +26,11 @@ let app = new Vue({
     },
     updateProduct(variantImage) {
       this.image = variantImage;
+    },
+  },
+  computed: {
+    title() {
+      return this.brand + " " + this.product;
     },
   },
 });
