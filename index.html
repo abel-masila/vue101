@@ -3,11 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Product App</title>
   </head>
   <body>
+    <div class="nav-bar"></div>
     <div id="app">
-      <h1>{{product}}</h1>
+      <div class="product">
+        <div class="product-image">
+          <img :src="image" />
+        </div>
+        <div class="product-info">
+          <h1>{{product}}</h1>
+          <p v-if="inStock">In Stock</p>
+          <p v-else>Out Of Stock</p>
+        </div>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
